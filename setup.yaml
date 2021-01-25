@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  aws-lambda-python3
+
+  Setup Events for aws-lambda-python3
+
+Parameters:
+  StableFunction:
+    Default: "arn:aws:lambda:us-east-1:012308139854:function:hello-world-HelloWorldFunction-P1SJZMP8NQLW:stable"
+    Description: the ARN of Lamda Function with Version in PRODUCTION
+    Type: String
+
+Resources:
+  ScheduledRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: "ScheduledRule"
+      ScheduleExpression: "rate(10 minutes)"
+      State: "ENABLED"
+      Targets:
+        -
+          Arn: !Ref StableFunction
+          Id: "hello-world-schedule"
+
+  OpsEventRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: "EventRule"
+      EventPattern:
+        detail-type:
+          - "AWS API Call via CloudTrail"
+        detail:
+          userIdentity:
+            type:
+              - "Root"
+      State: "ENABLED"
+      Targets:
+        -
+          Arn: !Ref StableFunction
+          Id: "OpsTopic"
+
+  PermissionForEventsToInvokeLambda:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref StableFunction
+      Action: "lambda:InvokeFunction"
+      Principal: "events.amazonaws.com"
+      SourceArn:
+        Fn::GetAtt:
+          - "ScheduledRule"
+          - "Arn"
