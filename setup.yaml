@@ -7,7 +7,7 @@ Description: >
 
 Parameters:
   StableFunction:
-    Default: "arn:aws:lambda:us-east-1:012308139854:function:hello-world-HelloWorldFunction-P1SJZMP8NQLW:stable"
+    Default: "arn:aws:lambda:us-east-1:000000000000:function:hello-world-HelloWorldFunction-P1SJZMP8NQLW:stable"
     Description: the ARN of Lamda Function with Version in PRODUCTION
     Type: String
 
