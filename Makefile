@@ -1,4 +1,6 @@
-AWS = aws --region us-east-1 --output text --no-cli-pager
+FUNC = hello-world-HelloWorldFunction-P1SJZMP8NQLW
+AWS = aws --region us-east-1 --output json --no-cli-pager
+PROD_VER = 2
 
 build: src/requirements.txt
 	sam build --use-container
@@ -21,5 +23,11 @@ testing:
 run:
 	sam local invoke --event ./assets/events/etl.json
 
+version:
+	$(AWS) lambda get-function --function-name $(FUNC)
+	$(AWS) lambda publish-version --function-name $(FUNC) --description "bump version to v3"
+
+production:
+	$(AWS) lambda update-alias --function-name $(FUNC) --name stable --function-version $(PROD_VER)
 
 .PHONY: build layer setup testing
