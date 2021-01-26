@@ -1,0 +1,13 @@
+{
+  "version": "0",
+  "id": "5c0edbba-19a2-bdbc-5da1-7cbc61ba2b7f",
+  "detail-type": "Scheduled Event",
+  "source": "aws.events",
+  "account": "000100010001",
+  "time": "2020-09-19T14:00:00Z",
+  "region": "ap-southeast-2",
+  "resources": [
+    "arn:aws:events:ap-southeast-2:000100010001:rule/easi-etl-DispatcherFunctionCheckJobEvent-XK8EZUA7Y7NY"
+  ],
+  "detail": {}
+}

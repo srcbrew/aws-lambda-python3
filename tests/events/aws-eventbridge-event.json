@@ -1,0 +1,15 @@
+{
+  "version": "0",
+  "id": "475d6f9d-6023-92e6-2708-55980b072705",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "my.source",
+  "account": "000100010001",
+  "time": "2020-09-21T00:00:48Z",
+  "region": "ap-southeast-2",
+  "resources": [],
+  "detail": {
+    "userIdentity": {
+      "type": "root"
+    }
+  }
+}
