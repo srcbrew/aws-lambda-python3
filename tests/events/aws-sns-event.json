@@ -1,0 +1,22 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:ap-northeast-1:000100010001:RDS:cbbbc15f-e4e6-4ca1-8898-9f474526b65b",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "4fc72e67-8a32-5d59-b128-76095d98fb84",
+        "TopicArn": "arn:aws:sns:ap-northeast-1:000100010001:RDS",
+        "Subject": "ALARM: \"tokyo replica rds syncing error\" in Asia Pacific (Tokyo)",
+        "Message": "{\"AlarmName\":\"tokyo replica rds syncing error\",\"AlarmDescription\":null,\"AWSAccountId\":\"000100010001\",\"NewStateValue\":\"ALARM\",\"NewStateReason\":\"Threshold Crossed: 1 out of the last 1 datapoints [-1.0 (05/01/21 21:03:00)] was less than the threshold (0.0) (minimum 1 datapoint for OK -> ALARM transition).\",\"StateChangeTime\":\"2021-01-05T21:08:58.931+0000\",\"Region\":\"Asia Pacific (Tokyo)\",\"AlarmArn\":\"arn:aws:cloudwatch:ap-northeast-1:000100010001:alarm:tokyo replica rds syncing error\",\"OldStateValue\":\"OK\",\"Trigger\":{\"MetricName\":\"AuroraBinlogReplicaLag\",\"Namespace\":\"AWS/RDS\",\"StatisticType\":\"Statistic\",\"Statistic\":\"AVERAGE\",\"Unit\":null,\"Dimensions\":[{\"value\":\"easi-prod-instance-slave1\",\"name\":\"DBInstanceIdentifier\"}],\"Period\":300,\"EvaluationPeriods\":1,\"ComparisonOperator\":\"LessThanThreshold\",\"Threshold\":0.0,\"TreatMissingData\":\"- TreatMissingData:                    missing\",\"EvaluateLowSampleCountPercentile\":\"\"}}",
+        "Timestamp": "2021-01-05T21:08:58.986Z",
+        "SignatureVersion": "1",
+        "Signature": "IGJgcssN21I2ycUw0tBmgSUNBq09Rq27TGUiUb9Q+hn7TQxXbvoFRj5ZElL/0Mt74NQ/DCbVhNcy231A2uZuVScTMDSLxFPVSyvsHiZajCHmO9IMuGWVTKEBSZpTkugwYZ67xyYpqdWEKbF/QBE5mXFfdpS/m7ItL59jcoZ0AFQ+rl/CGEtHaD7DU+iprTambtjn15En7TxVE+xG0xaOYWMhbUCT9utoDgHr70GY6Ppq35ORJBjyGPOpGti3KVB176C9BLjLsB5PhjQkZtYHEqv5apy160xP7h3m0Bek/vE8wqv1neoe3xc5RtPHQoYlfo2uLaKOoHUrzr6d30rPrg==",
+        "SigningCertUrl": "https://sns.ap-northeast-1.amazonaws.com/SimpleNotificationService-010a507c1833636cd94bdb98bd93083a.pem",
+        "UnsubscribeUrl": "https://sns.ap-northeast-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-northeast-1:000100010001:RDS:27d94256-08a7-4132-b3d9-b6da403af869",
+        "MessageAttributes": {}
+      }
+    }
+  ]
+}
